@@ -16,3 +16,6 @@ class Calculator:
         if y == 0:
             raise ValueError("Cannot divide by zero")
         return x / y
+
+
+print(Calculator.subtract(5, 3))

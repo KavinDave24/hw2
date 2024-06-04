@@ -1,0 +1,5 @@
+"""Subtraction functions"""
+
+
+def subtraction(val1, val2):
+    return val1 - val2
