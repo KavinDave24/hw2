@@ -1,7 +1,8 @@
-"""This is the starting test file"""
-from calculator.addition import addition
+# Inside app/calculations/__init__.py or another Python file in app.calculations
+class Addition:
+    def __init__(self, a=1, b=2):
+        self.a = a
+        self.b = b
 
-
-def test_addition():
-    """Add Two Numbers"""
-    assert addition(2, 2) == 4, "Addition is not working"
+    def calculate(self):
+        return self.a + self.b

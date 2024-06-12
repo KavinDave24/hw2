@@ -1,18 +1,18 @@
 class Calculator:
     @staticmethod
-    def add(x, y):
+    def addition(x, y):
         return x + y
 
     @staticmethod
-    def subtract(x, y):
+    def subtraction(x, y):
         return x - y
 
     @staticmethod
-    def multiply(x, y):
+    def multiplication(x, y):
         return x * y
 
     @staticmethod
-    def divide(x, y):
+    def division(x, y):
         if y == 0:
             raise ValueError("Cannot divide by zero")
         return x / y
