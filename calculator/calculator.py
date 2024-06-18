@@ -1,21 +1,19 @@
+# calculator/calculator.py
 class Calculator:
     @staticmethod
-    def addition(x, y):
+    def add(x, y):
         return x + y
 
     @staticmethod
-    def subtraction(x, y):
+    def subtract(x, y):
         return x - y
 
     @staticmethod
-    def multiplication(x, y):
+    def multiply(x, y):
         return x * y
 
     @staticmethod
-    def division(x, y):
+    def divide(x, y):
         if y == 0:
             raise ValueError("Cannot divide by zero")
         return x / y
-
-
-print(Calculator.subtract(5, 3))

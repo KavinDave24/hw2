@@ -1,9 +1,22 @@
-from operations import Calculator
+import pytest
+
+from operations import operations, Calculator
+from history import History
 
 
-def test_calculator_operations():
-    """Basic Calculator Tests using the Instance"""
-    assert Calculator.addition(2, 2) == 4, "The Addition Function Failed"
-    assert Calculator.division(2, 2) == 1, "The Division Function Failed"
-    assert Calculator.multiplication(2, 2) == 4, "Multiplication Didn't work"
-    assert Calculator.subtraction(2, 2) == 0, "subtraction didn't work"
+
+def test_calculator_operations(fake_data):
+    """Test calculator operations with generated data"""
+    for a, b, operation, expected in fake_data:
+        if operation == 'add':
+            assert Calculator.add(a, b) == expected, f"Failed on addition with {a} + {b}"
+        elif operation == 'subtract':
+            assert Calculator.subtract(a, b) == expected, f"Failed on subtraction with {a} - {b}"
+        elif operation == 'multiply':
+            assert Calculator.multiply(a, b) == expected, f"Failed on multiplication with {a} * {b}"
+        elif operation == 'divide':
+            if b == 0:
+                with pytest.raises(ValueError, match="Cannot divide by zero"):
+                    Calculator.divide(a, b)
+            else:
+                assert Calculator.divide(a, b) == expected, f"Failed on division with {a} / {b}"
